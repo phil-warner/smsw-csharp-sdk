@@ -33,9 +33,9 @@ namespace Example
         public void main()
         {
             // Configure API key authorization: JWT
-            Configuration.Default.ApiKey.Add("Authorization", "YOUR_API_KEY");
+            Configuration.Default.AddApiKey("Authorization", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // Configuration.Default.ApiKeyPrefix.Add("Authorization", "Bearer");
+            // Configuration.Default.AddApiKeyPrefix("Authorization", "Bearer");
 
             var apiInstance = new BatchMessagesApi();
             var batchid = batchid_example;  // string | The ID of the batch you would like returned
@@ -98,9 +98,9 @@ namespace Example
         public void main()
         {
             // Configure API key authorization: JWT
-            Configuration.Default.ApiKey.Add("Authorization", "YOUR_API_KEY");
+            Configuration.Default.AddApiKey("Authorization", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // Configuration.Default.ApiKeyPrefix.Add("Authorization", "Bearer");
+            // Configuration.Default.AddApiKeyPrefix("Authorization", "Bearer");
 
             var apiInstance = new BatchMessagesApi();
             var batchid = batchid_example;  // string | The ID of the batch you would like returned
@@ -146,7 +146,7 @@ Name | Type | Description  | Notes
 
 
 
-Schedules a batch of SMS messages to be sent at the date-time you specify
+Schedules a batch of SMS messages to be sent at the date time you specify
 
 ### Example
 ```csharp
@@ -163,9 +163,9 @@ namespace Example
         public void main()
         {
             // Configure API key authorization: JWT
-            Configuration.Default.ApiKey.Add("Authorization", "YOUR_API_KEY");
+            Configuration.Default.AddApiKey("Authorization", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // Configuration.Default.ApiKeyPrefix.Add("Authorization", "Bearer");
+            // Configuration.Default.AddApiKeyPrefix("Authorization", "Bearer");
 
             var apiInstance = new BatchMessagesApi();
             var smsMessage = new BatchMessage(); // BatchMessage | Message properties
@@ -228,9 +228,9 @@ namespace Example
         public void main()
         {
             // Configure API key authorization: JWT
-            Configuration.Default.ApiKey.Add("Authorization", "YOUR_API_KEY");
+            Configuration.Default.AddApiKey("Authorization", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // Configuration.Default.ApiKeyPrefix.Add("Authorization", "Bearer");
+            // Configuration.Default.AddApiKeyPrefix("Authorization", "Bearer");
 
             var apiInstance = new BatchMessagesApi();
             var smsMessage = new BatchMessage(); // BatchMessage | Message properties

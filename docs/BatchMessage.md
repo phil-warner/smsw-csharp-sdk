@@ -7,6 +7,8 @@ Name | Type | Description | Notes
 **Destinations** | **List&lt;string&gt;** | Telephone numbers of each of the recipients | 
 **Content** | **string** | Message to send to the recipient | 
 **Schedule** | **string** | Date-time at which to send the batch. This is only used by the batch/schedule service. | 
+**Tag** | **string** | An identifying label for the message, which you can use to filter and report on messages you&#39;ve sent later. Ideal for campaigns. | [optional] 
+**Ttl** | **decimal?** | The number of minutes before the message is deleted. Optional. Omit to prevent delivery report deletion. | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

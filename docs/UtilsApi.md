@@ -4,16 +4,16 @@ All URIs are relative to *https://api.thesmsworks.co.uk/v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**Hello**](UtilsApi.md#hello) | **GET** /utils/hello | 
+[**Test**](UtilsApi.md#test) | **GET** /utils/test | 
 
 
-<a name="hello"></a>
-# **Hello**
-> HelloWorldResponse Hello (string name = null)
+<a name="test"></a>
+# **Test**
+> TestResponse Test ()
 
 
 
-Returns 'Hello' to the caller
+Returns the customer ID to the caller
 
 ### Example
 ```csharp
@@ -25,21 +25,20 @@ using IO.Swagger.Model;
 
 namespace Example
 {
-    public class HelloExample
+    public class TestExample
     {
         public void main()
         {
             var apiInstance = new UtilsApi();
-            var name = name_example;  // string | The name of the person to whom to say hello (optional) 
 
             try
             {
-                HelloWorldResponse result = apiInstance.Hello(name);
+                TestResponse result = apiInstance.Test();
                 Debug.WriteLine(result);
             }
             catch (Exception e)
             {
-                Debug.Print("Exception when calling UtilsApi.Hello: " + e.Message );
+                Debug.Print("Exception when calling UtilsApi.Test: " + e.Message );
             }
         }
     }
@@ -47,14 +46,11 @@ namespace Example
 ```
 
 ### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **name** | **string**| The name of the person to whom to say hello | [optional] 
+This endpoint does not need any parameter.
 
 ### Return type
 
-[**HelloWorldResponse**](HelloWorldResponse.md)
+[**TestResponse**](TestResponse.md)
 
 ### Authorization
 

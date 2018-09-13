@@ -5,6 +5,7 @@ All URIs are relative to *https://api.thesmsworks.co.uk/v1*
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**CancelScheduledJob**](MessagesApi.md#cancelscheduledjob) | **DELETE** /messages/schedule/{messageid} | 
+[**GetInboxMessages**](MessagesApi.md#getinboxmessages) | **POST** /messages/inbox | 
 [**GetMessageById**](MessagesApi.md#getmessagebyid) | **GET** /messages/{messageid} | 
 [**GetMessages**](MessagesApi.md#getmessages) | **POST** /messages | 
 [**ScheduleMessage**](MessagesApi.md#schedulemessage) | **POST** /message/schedule | 
@@ -34,9 +35,9 @@ namespace Example
         public void main()
         {
             // Configure API key authorization: JWT
-            Configuration.Default.ApiKey.Add("Authorization", "YOUR_API_KEY");
+            Configuration.Default.AddApiKey("Authorization", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // Configuration.Default.ApiKeyPrefix.Add("Authorization", "Bearer");
+            // Configuration.Default.AddApiKeyPrefix("Authorization", "Bearer");
 
             var apiInstance = new MessagesApi();
             var messageid = messageid_example;  // string | The ID of the message you would like returned
@@ -76,6 +77,71 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+<a name="getinboxmessages"></a>
+# **GetInboxMessages**
+> MessagesResponse GetInboxMessages (Query query)
+
+
+
+Get unread uncoming messages matching your search criteria
+
+### Example
+```csharp
+using System;
+using System.Diagnostics;
+using IO.Swagger.Api;
+using IO.Swagger.Client;
+using IO.Swagger.Model;
+
+namespace Example
+{
+    public class GetInboxMessagesExample
+    {
+        public void main()
+        {
+            // Configure API key authorization: JWT
+            Configuration.Default.AddApiKey("Authorization", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // Configuration.Default.AddApiKeyPrefix("Authorization", "Bearer");
+
+            var apiInstance = new MessagesApi();
+            var query = new Query(); // Query | 
+
+            try
+            {
+                MessagesResponse result = apiInstance.GetInboxMessages(query);
+                Debug.WriteLine(result);
+            }
+            catch (Exception e)
+            {
+                Debug.Print("Exception when calling MessagesApi.GetInboxMessages: " + e.Message );
+            }
+        }
+    }
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **query** | [**Query**](Query.md)|  | 
+
+### Return type
+
+[**MessagesResponse**](MessagesResponse.md)
+
+### Authorization
+
+[JWT](../README.md#JWT)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json;charset=UTF-8
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 <a name="getmessagebyid"></a>
 # **GetMessageById**
 > MessageResponse GetMessageById (string messageid)
@@ -99,9 +165,9 @@ namespace Example
         public void main()
         {
             // Configure API key authorization: JWT
-            Configuration.Default.ApiKey.Add("Authorization", "YOUR_API_KEY");
+            Configuration.Default.AddApiKey("Authorization", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // Configuration.Default.ApiKeyPrefix.Add("Authorization", "Bearer");
+            // Configuration.Default.AddApiKeyPrefix("Authorization", "Bearer");
 
             var apiInstance = new MessagesApi();
             var messageid = messageid_example;  // string | The ID of the message you would like returned
@@ -164,9 +230,9 @@ namespace Example
         public void main()
         {
             // Configure API key authorization: JWT
-            Configuration.Default.ApiKey.Add("Authorization", "YOUR_API_KEY");
+            Configuration.Default.AddApiKey("Authorization", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // Configuration.Default.ApiKeyPrefix.Add("Authorization", "Bearer");
+            // Configuration.Default.AddApiKeyPrefix("Authorization", "Bearer");
 
             var apiInstance = new MessagesApi();
             var query = new Query(); // Query | 
@@ -229,9 +295,9 @@ namespace Example
         public void main()
         {
             // Configure API key authorization: JWT
-            Configuration.Default.ApiKey.Add("Authorization", "YOUR_API_KEY");
+            Configuration.Default.AddApiKey("Authorization", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // Configuration.Default.ApiKeyPrefix.Add("Authorization", "Bearer");
+            // Configuration.Default.AddApiKeyPrefix("Authorization", "Bearer");
 
             var apiInstance = new MessagesApi();
             var smsMessage = new Message(); // Message | Message properties
@@ -294,9 +360,9 @@ namespace Example
         public void main()
         {
             // Configure API key authorization: JWT
-            Configuration.Default.ApiKey.Add("Authorization", "YOUR_API_KEY");
+            Configuration.Default.AddApiKey("Authorization", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // Configuration.Default.ApiKeyPrefix.Add("Authorization", "Bearer");
+            // Configuration.Default.AddApiKeyPrefix("Authorization", "Bearer");
 
             var apiInstance = new MessagesApi();
             var smsMessage = new Message(); // Message | Message properties
