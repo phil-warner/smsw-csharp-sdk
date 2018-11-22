@@ -25,25 +25,38 @@ using SwaggerDateConverter = IO.Swagger.Client.SwaggerDateConverter;
 namespace IO.Swagger.Model
 {
     /// <summary>
-    /// An array of objects containing metadata key/value pairs that have been saved on messages.
+    /// CreditsResponse
     /// </summary>
     [DataContract]
-    public partial class QueryMetadata :  IEquatable<QueryMetadata>, IValidatableObject
+    public partial class CreditsResponse :  IEquatable<CreditsResponse>, IValidatableObject
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="QueryMetadata" /> class.
+        /// Initializes a new instance of the <see cref="CreditsResponse" /> class.
         /// </summary>
-        /// <param name="Schema">Schema.</param>
-        public QueryMetadata(MetaData Schema = default(MetaData))
+        [JsonConstructorAttribute]
+        protected CreditsResponse() { }
+        /// <summary>
+        /// Initializes a new instance of the <see cref="CreditsResponse" /> class.
+        /// </summary>
+        /// <param name="Credits">Credits (required).</param>
+        public CreditsResponse(int? Credits = default(int?))
         {
-            this.Schema = Schema;
+            // to ensure "Credits" is required (not null)
+            if (Credits == null)
+            {
+                throw new InvalidDataException("Credits is a required property for CreditsResponse and cannot be null");
+            }
+            else
+            {
+                this.Credits = Credits;
+            }
         }
         
         /// <summary>
-        /// Gets or Sets Schema
+        /// Gets or Sets Credits
         /// </summary>
-        [DataMember(Name="schema", EmitDefaultValue=false)]
-        public MetaData Schema { get; set; }
+        [DataMember(Name="credits", EmitDefaultValue=false)]
+        public int? Credits { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -52,8 +65,8 @@ namespace IO.Swagger.Model
         public override string ToString()
         {
             var sb = new StringBuilder();
-            sb.Append("class QueryMetadata {\n");
-            sb.Append("  Schema: ").Append(Schema).Append("\n");
+            sb.Append("class CreditsResponse {\n");
+            sb.Append("  Credits: ").Append(Credits).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -74,24 +87,24 @@ namespace IO.Swagger.Model
         /// <returns>Boolean</returns>
         public override bool Equals(object input)
         {
-            return this.Equals(input as QueryMetadata);
+            return this.Equals(input as CreditsResponse);
         }
 
         /// <summary>
-        /// Returns true if QueryMetadata instances are equal
+        /// Returns true if CreditsResponse instances are equal
         /// </summary>
-        /// <param name="input">Instance of QueryMetadata to be compared</param>
+        /// <param name="input">Instance of CreditsResponse to be compared</param>
         /// <returns>Boolean</returns>
-        public bool Equals(QueryMetadata input)
+        public bool Equals(CreditsResponse input)
         {
             if (input == null)
                 return false;
 
             return 
                 (
-                    this.Schema == input.Schema ||
-                    (this.Schema != null &&
-                    this.Schema.Equals(input.Schema))
+                    this.Credits == input.Credits ||
+                    (this.Credits != null &&
+                    this.Credits.Equals(input.Credits))
                 );
         }
 
@@ -104,8 +117,8 @@ namespace IO.Swagger.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                if (this.Schema != null)
-                    hashCode = hashCode * 59 + this.Schema.GetHashCode();
+                if (this.Credits != null)
+                    hashCode = hashCode * 59 + this.Credits.GetHashCode();
                 return hashCode;
             }
         }

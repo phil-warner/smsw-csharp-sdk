@@ -21,64 +21,64 @@ namespace IO.Swagger.Api
     /// <summary>
     /// Represents a collection of functions to interact with the API endpoints
     /// </summary>
-    public interface IUtilsApi : IApiAccessor
+    public interface ICreditsApi : IApiAccessor
     {
         #region Synchronous Operations
         /// <summary>
         /// 
         /// </summary>
         /// <remarks>
-        /// Returns the customer ID to the caller
+        /// Returns the number of credits currently available on the account
         /// </remarks>
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <returns>TestResponse</returns>
-        TestResponse Test ();
+        /// <returns>CreditsResponse</returns>
+        CreditsResponse Credits ();
 
         /// <summary>
         /// 
         /// </summary>
         /// <remarks>
-        /// Returns the customer ID to the caller
+        /// Returns the number of credits currently available on the account
         /// </remarks>
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <returns>ApiResponse of TestResponse</returns>
-        ApiResponse<TestResponse> TestWithHttpInfo ();
+        /// <returns>ApiResponse of CreditsResponse</returns>
+        ApiResponse<CreditsResponse> CreditsWithHttpInfo ();
         #endregion Synchronous Operations
         #region Asynchronous Operations
         /// <summary>
         /// 
         /// </summary>
         /// <remarks>
-        /// Returns the customer ID to the caller
+        /// Returns the number of credits currently available on the account
         /// </remarks>
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <returns>Task of TestResponse</returns>
-        System.Threading.Tasks.Task<TestResponse> TestAsync ();
+        /// <returns>Task of CreditsResponse</returns>
+        System.Threading.Tasks.Task<CreditsResponse> CreditsAsync ();
 
         /// <summary>
         /// 
         /// </summary>
         /// <remarks>
-        /// Returns the customer ID to the caller
+        /// Returns the number of credits currently available on the account
         /// </remarks>
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <returns>Task of ApiResponse (TestResponse)</returns>
-        System.Threading.Tasks.Task<ApiResponse<TestResponse>> TestAsyncWithHttpInfo ();
+        /// <returns>Task of ApiResponse (CreditsResponse)</returns>
+        System.Threading.Tasks.Task<ApiResponse<CreditsResponse>> CreditsAsyncWithHttpInfo ();
         #endregion Asynchronous Operations
     }
 
     /// <summary>
     /// Represents a collection of functions to interact with the API endpoints
     /// </summary>
-    public partial class UtilsApi : IUtilsApi
+    public partial class CreditsApi : ICreditsApi
     {
         private IO.Swagger.Client.ExceptionFactory _exceptionFactory = (name, response) => null;
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="UtilsApi"/> class.
+        /// Initializes a new instance of the <see cref="CreditsApi"/> class.
         /// </summary>
         /// <returns></returns>
-        public UtilsApi(String basePath)
+        public CreditsApi(String basePath)
         {
             this.Configuration = new Configuration { BasePath = basePath };
 
@@ -86,12 +86,12 @@ namespace IO.Swagger.Api
         }
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="UtilsApi"/> class
+        /// Initializes a new instance of the <see cref="CreditsApi"/> class
         /// using Configuration object
         /// </summary>
         /// <param name="configuration">An instance of Configuration</param>
         /// <returns></returns>
-        public UtilsApi(Configuration configuration = null)
+        public CreditsApi(Configuration configuration = null)
         {
             if (configuration == null) // use the default one in Configuration
                 this.Configuration = Configuration.Default;
@@ -165,25 +165,25 @@ namespace IO.Swagger.Api
         }
 
         /// <summary>
-        ///  Returns the customer ID to the caller
+        ///  Returns the number of credits currently available on the account
         /// </summary>
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <returns>TestResponse</returns>
-        public TestResponse Test ()
+        /// <returns>CreditsResponse</returns>
+        public CreditsResponse Credits ()
         {
-             ApiResponse<TestResponse> localVarResponse = TestWithHttpInfo();
+             ApiResponse<CreditsResponse> localVarResponse = CreditsWithHttpInfo();
              return localVarResponse.Data;
         }
 
         /// <summary>
-        ///  Returns the customer ID to the caller
+        ///  Returns the number of credits currently available on the account
         /// </summary>
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <returns>ApiResponse of TestResponse</returns>
-        public ApiResponse< TestResponse > TestWithHttpInfo ()
+        /// <returns>ApiResponse of CreditsResponse</returns>
+        public ApiResponse< CreditsResponse > CreditsWithHttpInfo ()
         {
 
-            var localVarPath = "/utils/test";
+            var localVarPath = "/credits/balance";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new List<KeyValuePair<String, String>>();
             var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
@@ -216,36 +216,36 @@ namespace IO.Swagger.Api
 
             if (ExceptionFactory != null)
             {
-                Exception exception = ExceptionFactory("Test", localVarResponse);
+                Exception exception = ExceptionFactory("Credits", localVarResponse);
                 if (exception != null) throw exception;
             }
 
-            return new ApiResponse<TestResponse>(localVarStatusCode,
+            return new ApiResponse<CreditsResponse>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (TestResponse) Configuration.ApiClient.Deserialize(localVarResponse, typeof(TestResponse)));
+                (CreditsResponse) Configuration.ApiClient.Deserialize(localVarResponse, typeof(CreditsResponse)));
         }
 
         /// <summary>
-        ///  Returns the customer ID to the caller
+        ///  Returns the number of credits currently available on the account
         /// </summary>
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <returns>Task of TestResponse</returns>
-        public async System.Threading.Tasks.Task<TestResponse> TestAsync ()
+        /// <returns>Task of CreditsResponse</returns>
+        public async System.Threading.Tasks.Task<CreditsResponse> CreditsAsync ()
         {
-             ApiResponse<TestResponse> localVarResponse = await TestAsyncWithHttpInfo();
+             ApiResponse<CreditsResponse> localVarResponse = await CreditsAsyncWithHttpInfo();
              return localVarResponse.Data;
 
         }
 
         /// <summary>
-        ///  Returns the customer ID to the caller
+        ///  Returns the number of credits currently available on the account
         /// </summary>
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <returns>Task of ApiResponse (TestResponse)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<TestResponse>> TestAsyncWithHttpInfo ()
+        /// <returns>Task of ApiResponse (CreditsResponse)</returns>
+        public async System.Threading.Tasks.Task<ApiResponse<CreditsResponse>> CreditsAsyncWithHttpInfo ()
         {
 
-            var localVarPath = "/utils/test";
+            var localVarPath = "/credits/balance";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new List<KeyValuePair<String, String>>();
             var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
@@ -278,13 +278,13 @@ namespace IO.Swagger.Api
 
             if (ExceptionFactory != null)
             {
-                Exception exception = ExceptionFactory("Test", localVarResponse);
+                Exception exception = ExceptionFactory("Credits", localVarResponse);
                 if (exception != null) throw exception;
             }
 
-            return new ApiResponse<TestResponse>(localVarStatusCode,
+            return new ApiResponse<CreditsResponse>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (TestResponse) Configuration.ApiClient.Deserialize(localVarResponse, typeof(TestResponse)));
+                (CreditsResponse) Configuration.ApiClient.Deserialize(localVarResponse, typeof(CreditsResponse)));
         }
 
     }
