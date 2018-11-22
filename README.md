@@ -1,4 +1,4 @@
-# IO.Swagger - the C# library for the The SMS Works API
+# C# library for the The SMS Works API
 
 The SMS Works provides a low-cost, reliable SMS API for developers. Pay only for delivered texts, all failed messages are refunded.
 
