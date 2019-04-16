@@ -83,9 +83,9 @@ namespace IO.Swagger.Model
             {
                 this.Schedule = Schedule;
             }
-            this.Tag = Tag;
-            this.Ttl = Ttl;
-            this.Metadata = Metadata;
+            this.Tag = Tag; // optional
+            this.Ttl = Ttl; // time to live, in minutes - optional
+            this.Metadata = Metadata; // optional
         }
         
         /// <summary>
